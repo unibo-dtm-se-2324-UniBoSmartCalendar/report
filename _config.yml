@@ -1,5 +1,11 @@
-title: Project work template
-description: A starter template for Software Engineering project work!
+title: UniBo Smart Calendar
+description: This project aims to develop a web-based calendar application designed for University of Bologna students to efficiently manage their academic schedules. The application will allow users to:
+• View and organize courses, events, and deadlines.
+• Filter schedules by course, curriculum, and academic year.
+• Export schedules via ICS format for integration with external calendar apps.
+• Subscribe to a URL feed to sync academic events with personal calendars (Google Calendar, Outlook, etc.).
+The system will process UniBo’s JSON data structure by fetching and parsing relevant scheduling information. Development will be conducted using Windsurf Code Editor, with coding assistance from Claude 3.5 Sonnet, while all steps are supervised by the team.
+The application will consists of a web service that manages event data, an API for schedule retrieval, and a user-friendly interface for interaction.
 remote_theme: pmarsceill/just-the-docs
 color_scheme: "light"
 search_enabled: true
