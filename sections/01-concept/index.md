@@ -4,6 +4,16 @@ has_children: false
 nav_order: 2
 ---
 
+## Disclaimer on the use of Generative AI
+
+During the development of **UniBo Smart Calendar**, Generative AI tools were used extensively as **programming assistants**. Their main contribution was in supporting the implementation of non-trivial code, such as proposing solution approaches, generating initial code drafts, clarifying the usage of specific libraries/frameworks, and suggesting refactorings to improve readability and maintainability.
+
+Importantly, AI-generated suggestions were treated as **starting points**, not as final deliverables. All AI-assisted code was **reviewed, understood, corrected, and adapted** by the team, and then validated through manual testing and automated checks (unit/integration tests and CI). The team ensured that the implemented behavior matched the intended functionality and quality standards.
+
+While AI tools could be used to explore alternative solutions or clarify technical options, all **final decisions** regarding system behavior, architecture, and project scope were taken by the team. In addition, none of the authors has a formal background in Software Engineering, therefore Generative AI tools were also used to bridge knowledge gaps and accelerate learning; nevertheless, the team made an explicit effort to **understand and justify** the adopted solutions rather than applying them blindly.
+
+The authors take **full responsibility** for the final software artifact and for the content of this report.
+
 # Concept
 
 **UniBo Smart Calendar** is a **web-based application with a graphical user interface** designed to help University of Bologna students manage academic schedules in a clearer and more efficient way. The project combines a **React web frontend** (user-facing GUI) with a **Node.js/Express backend** that provides **web services** for schedule retrieval and transformation.
