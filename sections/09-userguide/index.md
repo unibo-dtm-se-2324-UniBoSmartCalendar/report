@@ -36,24 +36,24 @@ To load your university schedule, you must add at least one timetable from **Cal
 
 Navigate to the **Calendar Settings** page. You will see the section **Add New Timetable** with a field named **Timetable JSON URL** and an **ADD** button.
 
-![Calendar Settings — Add New Timetable](../pictures/add-timetable.png)
+![Calendar Settings — Add New Timetable](pictures/add timetable.png)
 
-### Step 2 — Paste your UniBo timetable URL
+### Step 2 | Paste your UniBo timetable URL
 
 Paste the timetable URL of your course into the input field. Any UniBo course timetable link is accepted and will be automatically converted to the correct internal format.
 
-![Calendar Settings — Timetable URL inserted](../pictures/add-tt.png)
+![Calendar Settings — Timetable URL inserted](pictures/add tt.png)
 
-### Step 3 — Select Year and Curriculum
+### Step 3 | Select Year and Curriculum
 
 Select the additional academic parameters in the **Select Year and Curriculum** section:
 
 - Choose the **Year** (e.g., *2nd year*)
 - Choose the **Curriculum** (e.g., *Digital Transformation Management*)
 
-![Calendar Settings — Select Year and Curriculum](../pictures/ad-tt2.png)
+![Calendar Settings — Select Year and Curriculum](pictures/ad tt2.png)
 
-### Step 4 — Confirm by clicking ADD
+### Step 4 | Confirm by clicking ADD
 
 Click **ADD** to register the timetable. The timetable becomes active and is stored in the **Active Timetables** list.
 
