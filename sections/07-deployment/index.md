@@ -6,43 +6,74 @@ nav_order: 8
 
 # Deployment
 
-This section describes the strategy and operational procedures adopted to make the **UniBo Smart Calendar** application accessible to both end-users and developers. The project utilizes a dual-deployment strategy to support both a robust cloud-native production environment and a flexible local development workflow.
+# 07. Deployment
 
-## Deployment Strategy
+This section details the deployment architecture and operational procedures designed for **UniBo Smart Calendar**. The project adopts a modern web deployment strategy, utilizing a cloud-native approach for production to ensure high availability, while maintaining a flexible container-free environment for local development.
 
-The application follows a modern web architecture based on a JavaScript/Node.js stack. To ensure scalability and ease of management, the deployment is structured into two main approaches:
+## 7.1. Deployment Strategy
 
-1.  **Cloud Deployment (Production):** Utilization of the **Vercel** platform for automatic provisioning of the frontend and serverless APIs.
-2.  **Local Deployment (Development/Testing):** Configuration of a local Node.js environment for testing, debugging, and feature development.
+The application is built on a JavaScript/Node.js stack. To maximize scalability and minimize infrastructure management overhead, the deployment strategy is bifurcated:
 
-## Cloud Deployment: Vercel
+1.  **Production Environment (Cloud):** Hosted on **Vercel**, leveraging its global CDN for the frontend and Serverless Functions for the backend.
+2.  **Development Environment (Local):** A local Node.js setup that allows developers to emulate the production environment, run tests, and debug logic in real-time.
 
-The production version of UniBo Smart Calendar is hosted on [Vercel](https://vercel.com). This platform was selected for its seamless integration with the GitHub workflow and its native support for **Serverless Functions**, which are critical for handling the backend proxy logic and calendar parsing without requiring a dedicated server infrastructure.
+## 7.2. Cloud Deployment: Vercel
 
-### Configuration
-The repository includes a `vercel.json` configuration file that instructs the platform on how to handle routing and build outputs:
--   **Frontend:** The React application is compiled via `npm run build` and served as optimized static content.
--   **Backend API:** Requests targeting `/api/*` are routed to the Node.js functions located in the `api/` directory. This serverless architecture effectively resolves CORS issues when fetching data from external university calendar endpoints.
+The production artifact is deployed to [Vercel](https://vercel.com). This platform was chosen for its native integration with the Git workflow and its specialized support for the project's architecture, effectively treating the frontend and backend as a unified entity during deployment.
 
-The production application is accessible at: [https://unibosmartcalendar.vercel.app](https://unibosmartcalendar.vercel.app)
+### 7.2.1. Serverless Architecture
+Unlike traditional VPS deployment, the backend logic (specifically the calendar parsing and proxy services) is deployed as **Serverless Functions**.
+-   **Routing:** All requests sent to the `/api/*` endpoint are intercepted by Vercel's Edge Network and routed to the corresponding Node.js functions located in the `api/` directory of the repository.
+-   **Benefits:** This approach eliminates the need to manage server uptime or scaling. Resources are allocated dynamically based on traffic demand.
 
-## Local Deployment
+### 7.2.2. Configuration (`vercel.json`)
+The repository includes a strict configuration file, `vercel.json`, which governs the build and runtime behavior:
+-   **Rewrites:** It configures URL rewrites to map API calls to the serverless handlers.
+-   **CORS Policy:** It explicitly handles Cross-Origin Resource Sharing headers to allow the frontend to securely communicate with the backend proxy.
 
-To run the artifact locally, developers must have **Node.js (v18+)** and **npm (v9+)** installed. The project's structure allows for the management of both client and server logic with a unified set of commands.
+**Production URL:** [https://unibosmartcalendar.vercel.app](https://unibosmartcalendar.vercel.app)
 
-### Installation Procedure
-1.  **Clone the repository:**
+## 7.3. Local Deployment
+
+For development and artifact verification, the project is designed to run locally using the **Node.js** runtime. The repository follows a structure where both the client (React) and the server (Express/Node) are managed via a single `package.json`.
+
+### 7.3.1. Prerequisites
+-   **Node.js:** Version 18.x or higher (LTS recommended).
+-   **npm:** Version 9.x or higher.
+-   **Git:** For version control operations.
+
+### 7.3.2. Installation Procedure
+To set up the artifact locally, follow these steps:
+
+1.  **Clone the Repository:**
     ```bash
     git clone [https://github.com/unibo-dtm-se-2324-UniBoSmartCalendar/artifact.git](https://github.com/unibo-dtm-se-2324-UniBoSmartCalendar/artifact.git)
     cd artifact
     ```
-2.  **Install dependencies:**
+
+2.  **Install Dependencies:**
     ```bash
     npm install
     ```
-    *This command recursively installs all necessary packages for both the React frontend and the Express backend/serverless handlers.*
+    *This command reads the `package.json` file and installs all required libraries for both the frontend (e.g., React, Vite) and the backend (e.g., ical-generator, axios).*
 
-### Execution
-The application can be launched in development mode using the following command:
+3.  **Environment Configuration:**
+    Create a `.env` file in the root directory by copying the provided template:
+    ```bash
+    cp .env.example .env
+    ```
+    *Edit the new `.env` file to configure any necessary API keys or port settings (default: 3000).*
+
+### 7.3.3. Execution
+To launch the application in development mode:
 ```bash
 npm start
+```
+
+This command triggers a concurrent script that launches:
+
+The Frontend: Accessible via http://localhost:3000 (served via Vite).
+
+The Backend API: Accessible via http://localhost:3001 (or the configured API port).
+
+The environment supports Hot Module Replacement (HMR), meaning changes to the source code are immediately reflected in the browser without a full page reload.
