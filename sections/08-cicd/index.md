@@ -58,7 +58,7 @@ The workflow exploits several specific GitHub Actions capabilities to optimize p
 
 ## Pipeline Architecture Diagram
 
-![Pipeline Architecture Diagram](cipipelinediagram.pngpng)
+![Pipeline Architecture Diagram](cipipelinediagram.pngß)
 
 ## 8.3. CD Implementation: Vercel Integration
 
