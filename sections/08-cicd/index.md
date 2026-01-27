@@ -56,41 +56,9 @@ The workflow exploits several specific GitHub Actions capabilities to optimize p
     - **Testing:** Runs `npm run test` (Vitest). If any assertion fails, the process exits with a non-zero status code, halting the pipeline.
     - **Build Dry-Run:** Runs `npm run build` (Vite). This is crucial for verifying that the application builds successfully without memory errors or missing assets, even if the tests pass.
 
-```mermaid
-graph TD
-    %% Nodes
-    User([Developer])
-    Repo[GitHub Repository]
+## Pipeline Architecture Diagram
 
-    subgraph CI [CI: GitHub Actions]
-        direction TB
-        Install[📦 npm ci]
-        Test[🧪 Unit Tests]
-        Build[🏗️ Build Verification]
-    end
-
-    subgraph CD [CD: Vercel]
-        direction TB
-        Preview[🚀 Preview Deployment]
-        Prod[🌍 Production Deployment]
-    end
-
-    %% Flow
-    User -->|Push / PR| Repo
-    Repo --> Install
-    Install --> Test
-    Test --> Build
-
-    %% Logic Split
-    Build -->|Pull Request| Preview
-    Build -->|Merge to Main| Prod
-
-    %% Styling (Optional - for standard rendering)
-    classDef ci fill:#e1f5fe,stroke:#01579b,stroke-width:2px;
-    classDef cd fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px;
-    class Install,Test,Build ci;
-    class Preview,Prod cd;
-```
+![Pipeline Architecture Diagram](cipipelinediagram.pngpng)
 
 ## 8.3. CD Implementation: Vercel Integration
 
