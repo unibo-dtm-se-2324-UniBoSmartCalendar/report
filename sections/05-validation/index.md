@@ -6,8 +6,6 @@ nav_order: 6
 
 # Validation
 
-# 05. Validation
-
 This section details the validation activities performed to ensure the **UniBo Smart Calendar** artifact meets its requirements. The validation process relies on a robust automated testing framework powered by **Vitest**.
 
 ## 5.1. Automated Testing Strategy
@@ -38,7 +36,7 @@ The repository organizes tests into specific categories within the `tests/` dire
 To ensure high reliability, code coverage metrics are generated using the command:
 ```bash
 npm run coverage
-'''
+```
 
 This executes vitest run --coverage, analyzing which lines of code are executed during testing. This metric allows the team to identify untested paths in the logic, particularly within the calendar parsing utilities.
 

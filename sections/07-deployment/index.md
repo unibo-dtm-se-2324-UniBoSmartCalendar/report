@@ -6,8 +6,6 @@ nav_order: 8
 
 # Deployment
 
-# 07. Deployment
-
 This section details the deployment architecture and operational procedures designed for **UniBo Smart Calendar**. The project adopts a modern web deployment strategy, utilizing a cloud-native approach for production to ensure high availability, while maintaining a flexible container-free environment for local development.
 
 ## 7.1. Deployment Strategy
