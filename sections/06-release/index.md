@@ -6,8 +6,6 @@ nav_order: 7
 
 # Release
 
----
-
 ### 6.1 Artifact Production and Distribution
 
 The UniBo Smart Calendar project produces artifacts ready for the production environment through a structured pipeline.
