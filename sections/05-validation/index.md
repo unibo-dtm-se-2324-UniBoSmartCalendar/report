@@ -40,7 +40,7 @@ npm run coverage
 
 This executes vitest run --coverage, analyzing which lines of code are executed during testing. This metric allows the team to identify untested paths in the logic, particularly within the calendar parsing utilities.
 
-5.1.4. Success Criteria
+### 5.1.4. Success Criteria
 The validation process enforces strict success criteria:
 
 CI Gate: The GitHub Actions pipeline (ci.yml) explicitly runs npm test as a blocking step. If any test fails, the build is marked as failed, preventing merging or deployment.
@@ -52,6 +52,7 @@ Browser Compatibility: The browserslist configuration in package.json ensures th
 User Acceptance Testing (UAT) was conducted to validate the system against the core business requirements. Unlike the automated unit tests which verify code correctness, these tests verified the end-to-end user workflows in the production environment hosted on Vercel.
 
 ### 5.2.1. Test Scenarios & Outcomes
+
 The acceptance test plan focused on the three primary functionalities of the system: Discovery, Customization, and Export.
 
 #### Scenario A: Course Discovery & Visualization
