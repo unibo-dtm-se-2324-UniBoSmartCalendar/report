@@ -4,17 +4,19 @@ has_children: false
 nav_order: 3
 ---
 
+## Requirements
+
 This chapter specifies what **UniBo Smart Calendar** must do, focusing exclusively on the expected system behavior and constraints. Requirements are presented with clear goals, and divided in three categories: **Functional**, **Non-functional**, and **Implementation**. For each requirement, we define the related **acceptance criteria** to make validation objective and testable.
 
 ## 2.1 Goals
 
 This subsection summarizes the project’s main objectives at a high level. Goals explain **what the system is intended to achieve** (e.g., schedule visualization, personalization, interoperability) and provide the reference point used to derive the detailed requirements.
 
-- **G1 | Centralize academic scheduling information:** provide a single web interface where students can view and manage UniBo academic events (lectures, deadlines, etc.).
-- **G2 | Enable schedule personalization:** allow users to filter and organize the displayed schedule according to academic dimensions (e.g., course, curriculum, year).
-- **G3 | Support conflict awareness:** detect time overlaps between events and clearly surface them to the user.
-- **G4 | Ensure interoperability:** allow users to export and synchronize their schedules with external calendar applications via **ICS** and **subscription URL feed**.
-- **G5 | Ensure reliability and maintainability:** provide a solution that is testable, reproducible, and consistent across environments (local + CI).
+- **G1** | **Centralize academic scheduling information:** provide a single web interface where students can view and manage UniBo academic events (lectures, deadlines, etc.).
+- **G2** | **Enable schedule personalization:** allow users to filter and organize the displayed schedule according to academic dimensions (e.g., course, curriculum, year).
+- **G3** | **Support conflict awareness:** detect time overlaps between events and clearly surface them to the user.
+- **G4** | **Ensure interoperability:** allow users to export and synchronize their schedules with external calendar applications via **ICS** and **subscription URL feed**.
+- **G5** | **Ensure reliability and maintainability:** provide a solution that is testable, reproducible, and consistent across environments (local + CI).
 
 ## 2.2 Glossary / Clarifications
 
