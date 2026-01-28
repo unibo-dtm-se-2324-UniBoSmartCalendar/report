@@ -27,7 +27,7 @@ From a product perspective, the system can be described as:
 For delivery and accessibility, the application can be deployed on a cloud platform such as **Vercel**, enabling users to access the system via the web and, when configured, consume the calendar feed remotely.
 
 The main use cases supported by the product are:
-1. **Schedule visualization and organization:** users can view lectures and academic events in a calendar layout and access supporting lists/pages for better readability.  
+1. **Schedule visualization and organization:** users can view lectures in a calendar layout and access supporting lists/pages for better readability.  
 2. **Personalization through filtering:** schedules can be filtered by course, program/curriculum, and academic year to focus on the relevant subset of events.  
 3. **Conflict awareness:** the application detects temporal overlaps between lectures (“conflicts”) and visually highlights them to help students identify clashes in their timetable.  
 4. **Calendar interoperability:** users can export their schedule in **ICS format** and subscribe to a **calendar URL feed**, enabling synchronization with external calendar platforms such as Google Calendar, Outlook, and Apple Calendar.
