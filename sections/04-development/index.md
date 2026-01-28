@@ -56,7 +56,7 @@ An identification mechanism based on anonymous client-side generated profiles (U
 
 * **Frontend:** React 18 for managing a reactive, component-based user interface.
 * **Backend:** Node.js with the Express framework for API handling and parsing logic.
-* **UI Framework:** Material UI (MUI v6) to ensure a modern and accessible design.
+* **UI Framework:** Material UI (MUI v5) to ensure a modern and accessible design.
 
 **Core Libraries:**
 
