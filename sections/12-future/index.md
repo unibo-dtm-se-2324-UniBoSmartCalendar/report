@@ -11,7 +11,7 @@ This section summarizes the main limitations of **UniBo Smart Calendar** at the 
 ## 12.1 Known issues (current limitations)
 
 ### K1 | Dependency on UniBo sources
-The system relies on UniBo-provided calendar sources (ICS/JSON endpoints). If URLs, formats, or field semantics change, schedule retrieval and parsing may break or produce incomplete data.
+The system relies on UniBo-provided calendar sources (JSON endpoints). If URLs, formats, or field semantics change, schedule retrieval and parsing may break or produce incomplete data.
 
 ### K2 | Calendar interoperability differences
 Although ICS export and subscription are supported, external calendar applications (Google Calendar, Outlook, Apple Calendar) may interpret certain fields differently (e.g., timezones, recurring rules, descriptions). Some events might appear with minor formatting differences depending on the client.
