@@ -4,7 +4,7 @@ has_children: false
 nav_order: 3
 ---
 
-### Requirements
+# Requirements
 
 This chapter specifies what **UniBo Smart Calendar** must do, focusing exclusively on the expected system behavior and constraints. Requirements are presented with clear goals, and divided in three categories: **Functional**, **Non-functional**, and **Implementation**. For each requirement, we define the related **acceptance criteria** to make validation objective and testable.
 
