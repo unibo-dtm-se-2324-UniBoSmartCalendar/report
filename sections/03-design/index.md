@@ -72,7 +72,7 @@ Transitions are triggered by user actions (e.g., submit timetable, change timeta
 
 The system processes schedule data coming from UniBo sources and provides a normalized representation to the client. The main data aspects are:
 
-- **Input sources:** timetable sources provided by the university (e.g., ICS endpoints or equivalent structured schedule sources).
+- **Input sources:** timetable sources provided by the university (e.g., structured schedule sources).
 - **Normalized JSON schema:** the output returned to the frontend is a normalized dataset containing a consistent representation of events (title, start/end datetime, optional metadata). This schema is designed to simplify rendering, filtering, and conflict highlighting.
 - **Derived metadata:** conflict flags and any additional computed fields used by the UI to highlight overlaps and improve readability.
 - **Interoperability outputs:** the system supports generation of calendar-compatible outputs:
