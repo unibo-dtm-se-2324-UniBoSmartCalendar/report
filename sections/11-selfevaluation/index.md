@@ -64,3 +64,52 @@ This project allowed me to specialize in the operational side of software engine
 
 ### Final Conclusion
 As the DevOps & QA Specialist, I am satisfied with the stability and quality of the final artifact. The automated pipeline and comprehensive test suite provide a safety net that allowed the backend and frontend developers to move quickly. The infrastructure is now fully automated, requiring zero manual intervention for deployment, which meets the professional standards expected of a modern software project.
+
+### Alessandro
+
+#### Role and Responsibilities
+
+In the **UniBo Smart Calendar** project, I covered the role of **Backend Engineer & Logic**. My primary objective was to build the application's "engine" by managing the acquisition of data from university servers, its normalization, and the development of the business logic for conflict resolution.
+
+My specific contributions, aligned with the project's changelog, included:
+
+* **Backend Proxy Development (v0.1.0 & v0.3.0):** I designed the Express server to function as a proxy, resolving CORS issues and allowing reliable fetching of schedule data from UniBo servers.
+* **Conflict Detection Engine (v0.3.0):** I created and implemented the proprietary algorithm for the automatic identification of temporal overlaps between lectures, which is the heart of the domain logic.
+* **Data Normalization and Parsing (v0.3.0):** I developed the backend services to clean and standardize raw data, ensuring the frontend receives event objects ready for rendering.
+* **iCalendar (.ICS) Export:** I integrated the logic for generating `.ics` files to allow the subscription and export of the personalized calendar to external apps such as Google Calendar and Outlook.
+
+#### Technical Challenges & Solutions
+
+**Challenge 1: Overcoming CORS Restrictions**
+
+* **Context:** The browser blocked direct requests to the University's timetable servers for security reasons, preventing data loading on the client side.
+* **Solution:** I implemented the `/api/fetch-schedule` proxy endpoint in the `server/index.js` file. By using the `axios` library on the server side, I bypassed browser restrictions, allowing the backend to download the data and serve it to the frontend safely and transparently.
+
+**Challenge 2: Developing an Efficient Conflict Detection Algorithm**
+
+* **Context:** With fragmented schedules and multiple courses, visually identifying overlaps was the main challenge of the project.
+* **Solution:** I developed the `conflictUtils.js` module. The algorithm analyzes each event against others in the same time frame, marking "overlaps" with specific metadata that the frontend uses for visual flagging, drastically improving the utility of the schedule for the student.
+
+**Challenge 3: Standardizing the ICS Format for Export**
+
+* **Context:** The events received from UniBo servers were not compliant with the international iCalendar standard required by apps like Apple Calendar or Outlook.
+* **Solution:** I implemented the `generateICSContent` function in the backend using the `ics` library. This process transforms the events filtered by the user into an RFC 5545 compliant data stream, allowing for perfect cross-platform synchronization.
+
+#### Professional Growth & Learning Outcomes
+
+This project allowed me to specialize in server-side software engineering competencies:
+
+* **Proxy Architecture and APIs:** I learned how to manage communications between heterogeneous systems and how to structure a backend that acts as a normalization layer for non-structured external data.
+* **Complex Domain Logic:** Developing the conflict management system taught me the importance of separating heavy computational logic from the interface rendering, optimizing overall performance.
+* **Interoperability and Standards:** The implementation of the `.ics` format gave me a practical understanding of global data exchange standards and how critical data validation is at the entry and exit points.
+
+#### Final Conclusion
+
+As the Backend Engineer, I am satisfied with the implemented data architecture. The "Data Flow" I designed—which moves from the proxy server to the client via the parser—ensures that the application is robust and scalable. The conflict resolution logic and the export system provide real added value, transforming a simple schedule viewer into a professional academic planning tool that meets the software engineering standards required for this project.
+
+
+
+
+
+
+
