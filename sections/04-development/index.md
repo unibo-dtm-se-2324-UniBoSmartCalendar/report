@@ -7,7 +7,7 @@ nav_order: 5
 # Development
 
 
-### 3.1 DVCS and Versioning Strategy
+### 4.1 DVCS and Versioning Strategy
 
 Version control was managed using Git, adopting the Software Versioning methodologies discussed during the course to assign unique identifiers to specific states of the software.
 
@@ -32,7 +32,7 @@ Development was divided into milestones tracked in the `CHANGELOG.md`, which chr
 
 ---
 
-### 3.2 Implementation Details
+### 4.2 Implementation Details
 
 **Network Protocols:**
 Communication between the React frontend and the Node.js backend takes place via the HTTP/HTTPS protocol. A Proxy Server was implemented in the backend to handle requests to the University of Bologna servers. This technical choice is necessary to overcome browser CORS restrictions when retrieving the original timetables.
@@ -50,7 +50,7 @@ An identification mechanism based on anonymous client-side generated profiles (U
 
 ---
 
-### 3.3 Technological Details
+### 4.3 Technological Details
 
 **Technology Stack:**
 
