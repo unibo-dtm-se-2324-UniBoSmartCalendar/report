@@ -8,7 +8,7 @@ nav_order: 4
 
 This chapter explains the strategies adopted to meet the requirements identified in the analysis (Section 02). In particular, it describes the overall architecture of **UniBo Smart Calendar**, how the domain is modeled, how the main interactions are executed, how the UI behaves through well-defined states, and which data-related decisions support parsing, visualization, and interoperability.
 
-## Architecture
+## 3.1 Architecture
 
 UniBo Smart Calendar follows a **layered architecture** implemented in a **monorepo** structure, with a clear separation of concerns between presentation, integration, and data-processing responsibilities. The system is composed of the following main components:
 
@@ -24,7 +24,7 @@ The following component diagram provides a high-level view of how these componen
 
 The architectural choice to route UniBo schedule retrieval through a backend proxy and normalization layer supports key requirements: it reduces duplication in the frontend, improves robustness against changes in external sources, and keeps the UI focused on interaction and visualization.
 
-## Modelling
+## 3.2 Modelling
 
 The domain is modeled around the concept of **academic events** and the academic dimensions needed to build a personalized schedule. The most relevant concepts include:
 
@@ -39,7 +39,7 @@ The domain is modeled around the concept of **academic events** and the academic
 - core domain transformations (normalization and conflict detection) are kept in dedicated modules/utilities to avoid scattering business rules across UI components;
 - integration logic is separated from domain rules through the services layer and the backend proxy.
 
-## Interaction
+## 3.3 Interaction
 
 The most relevant interaction in the system is the schedule retrieval flow: the user provides timetable configuration, the system fetches UniBo sources, normalizes the data, and renders the calendar.
 
@@ -55,7 +55,7 @@ This behavior is represented by the following sequence diagram:
 
 ![Sequence Diagram - Load Schedule](sequencediagram.png)
 
-## Behaviour
+## 3.4 Behaviour
 
 To ensure consistent user feedback and predictable UI behavior, the frontend can be represented as a state machine. The main states are:
 
@@ -68,7 +68,7 @@ Transitions are triggered by user actions (e.g., submit timetable, change timeta
 
 ![UI State Diagram](statediagram.png)
 
-## Data-related aspects
+## 3.5 Data-related aspects
 
 The system processes schedule data coming from UniBo sources and provides a normalized representation to the client. The main data aspects are:
 
