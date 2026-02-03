@@ -15,7 +15,7 @@ UniBo Smart Calendar follows a **layered architecture** implemented in a **monor
 - **Frontend (React GUI):** the user-facing web application. It provides the calendar view, settings pages, and navigation between views. Its responsibility is to render information and collect user inputs (e.g., timetable URL insertion, filter selection, export/subscription actions).
 - **Client Services Layer (`src/services`):** a set of modular services used by the UI to communicate with the backend. This layer centralizes HTTP calls and keeps components clean, improving maintainability and enabling easier testing/mocking of interactions.
 - **Backend (Node.js / Express API as Proxy):** a web service that intercepts client requests, retrieves the original timetable sources from UniBo endpoints, and exposes the processed output to the frontend. This proxy layer isolates external dependencies and allows schedule retrieval logic to remain centralized.
-- **Parser / Normalizer:** processing logic that transforms raw schedule input (e.g., ICS sources) into a normalized JSON representation suitable for the client. The normalizer standardizes event fields and may compute additional metadata needed by the UI.
+- **Parser / Normalizer:** processing logic that transforms raw schedule input (e.g., JSON sources) into a normalized JSON representation suitable for the client. The normalizer standardizes event fields and may compute additional metadata needed by the UI.
 - **Interoperability endpoints:** functionality for **ICS export** and/or **calendar subscription feed**, enabling synchronization with external calendars (Google Calendar, Outlook, Apple Calendar).
 
 The following component diagram provides a high-level view of how these components are linked:
